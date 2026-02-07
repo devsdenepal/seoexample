@@ -18,6 +18,9 @@ export async function generateMetadata({ params }) {
     return {
         title: `${title} News | Global Geopolitics Daily`,
         description: `Latest updates and analysis on ${title} and global affairs.`,
+        alternates: {
+            canonical: `/category/${slug}`,
+        },
     };
 }
 

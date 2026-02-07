@@ -49,9 +49,6 @@ export const metadata = {
     images: ['/logo.png'],
     creator: '@GeopoliticsDaily',
   },
-  alternates: {
-    canonical: '/',
-  },
   icons: {
     icon: '/logo.png',
     shortcut: '/logo.png',
