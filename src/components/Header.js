@@ -12,7 +12,7 @@ export default function Header() {
 
         async function fetchTickerNews() {
             try {
-                const res = await fetch('/api/news');
+                const res = await fetch('/seoexample/api/news');
                 const data = await res.json();
                 setNewsTicker(data);
             } catch (error) {
@@ -30,7 +30,7 @@ export default function Header() {
                         <div className="col-md-3">
                             <div className="logo_area">
                                 <Link href="/">
-                                    <img src="/logo.png" alt="logo" />
+                                    <img src="/seoexample/logo.png" alt="logo" />
                                 </Link>
                             </div>
                         </div>

@@ -1,6 +1,6 @@
 export const dynamic = 'force-static';
 
-const BASE_URL = 'https://globalgeopoliticsdaily.com';
+const BASE_URL = 'https://geo.itzdev.co.uk/seoexample';
 
 export default function robots() {
     return {

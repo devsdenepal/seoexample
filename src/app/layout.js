@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 
 // Perfect SEO Metadata Configuration
 export const metadata = {
-  metadataBase: new URL('https://globalgeopoliticsdaily.com'), // Replace with actual domain in production
+  metadataBase: new URL('https://geo.itzdev.co.uk/seoexample'), // Matches the deployment subpath
   title: {
     default: 'Global Geopolitics Daily',
     template: '%s | Global Geopolitics Daily',
@@ -34,7 +34,7 @@ export const metadata = {
     description: 'In-depth analysis of global affairs, security, and strategic developments.',
     images: [
       {
-        url: '/logo.png', // Uses the local logo we configured
+        url: '/seoexample/logo.png', // Uses the local logo we configured
         width: 800,
         height: 600,
         alt: 'Global Geopolitics Daily Logo',
@@ -45,16 +45,16 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Global Geopolitics Daily',
     description: 'Real-time geopolitical intelligence and OSINT analysis.',
-    images: ['/logo.png'],
+    images: ['/seoexample/logo.png'],
     creator: '@GeopoliticsDaily',
   },
   alternates: {
     canonical: '/',
   },
   icons: {
-    icon: '/logo.png',
-    shortcut: '/logo.png',
-    apple: '/logo.png',
+    icon: '/seoexample/logo.png',
+    shortcut: '/seoexample/logo.png',
+    apple: '/seoexample/logo.png',
   },
 };
 
