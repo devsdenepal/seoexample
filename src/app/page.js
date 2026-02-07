@@ -30,7 +30,7 @@ export default async function Home() {
                     <div className="news_card">
                       <img src={item.image || "https://placehold.co/800x400?text=Main+News"} alt={item.title} style={{ height: '400px' }} />
                       <div className="news_content">
-                        <h1 className="h3 font-weight-bold"><Link href={`/news/${item.id}`}>{item.title}</Link></h1>
+                        <h1 className="h3 font-weight-bold"><Link href={`/news/${item.slug}`} prefetch={false}>{item.title}</Link></h1>
                         <p className="lead">{item.summary}</p>
                         <div className="news_meta">
                           <i className="fas fa-clock mr-1"></i> {new Date(item.published_at).toLocaleTimeString('ne-NP')} |
@@ -48,7 +48,7 @@ export default async function Home() {
                     <div className="news_card">
                       <img src={item.image || `https://placehold.co/400x250?text=News+${index}`} alt={item.title} />
                       <div className="news_content">
-                        <h3><Link href={`/news/${item.id}`}>{item.title}</Link></h3>
+                        <h3><Link href={`/news/${item.slug}`} prefetch={false}>{item.title}</Link></h3>
                         <div className="news_meta">
                           <i className="fas fa-clock mr-1"></i> {new Date(item.published_at).toLocaleDateString('ne-NP')}
                         </div>
@@ -70,7 +70,7 @@ export default async function Home() {
                       <div className="media">
                         <img src={item.image || "https://placehold.co/60x60"} className="mr-3 rounded" alt="..." style={{ width: '60px', height: '60px', objectFit: 'cover' }} />
                         <div className="media-body">
-                          <h6 className="mt-0 font-weight-bold"><Link href={`/news/${item.id}`}>{item.title}</Link></h6>
+                          <h6 className="mt-0 font-weight-bold"><Link href={`/news/${item.slug}`} prefetch={false}>{item.title}</Link></h6>
                         </div>
                       </div>
                     </li>
@@ -102,7 +102,7 @@ export default async function Home() {
                 <div className="news_card">
                   <img src={item.image || "https://placehold.co/300x200?text=Conflict"} alt={item.title} />
                   <div className="news_content p-2">
-                    <h5 style={{ fontSize: '16px' }}><Link href={`/news/${item.id}`}>{item.title}</Link></h5>
+                    <h5 style={{ fontSize: '16px' }}><Link href={`/news/${item.slug}`} prefetch={false}>{item.title}</Link></h5>
                   </div>
                 </div>
               </div>
@@ -122,7 +122,7 @@ export default async function Home() {
                 <div className="news_card">
                   <img src={item.image || "https://placehold.co/300x200?text=Intel"} alt={item.title} />
                   <div className="news_content p-2">
-                    <h5 style={{ fontSize: '16px' }}><Link href={`/news/${item.id}`}>{item.title}</Link></h5>
+                    <h5 style={{ fontSize: '16px' }}><Link href={`/news/${item.slug}`} prefetch={false}>{item.title}</Link></h5>
                   </div>
                 </div>
               </div>
@@ -142,7 +142,7 @@ export default async function Home() {
                 <div className="news_card">
                   <img src={item.image || "https://placehold.co/300x200?text=Cyber"} alt={item.title} />
                   <div className="news_content p-2">
-                    <h5 style={{ fontSize: '16px' }}><Link href={`/news/${item.id}`}>{item.title}</Link></h5>
+                    <h5 style={{ fontSize: '16px' }}><Link href={`/news/${item.slug}`} prefetch={false}>{item.title}</Link></h5>
                   </div>
                 </div>
               </div>

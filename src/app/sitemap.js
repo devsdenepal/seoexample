@@ -1,7 +1,7 @@
 export const dynamic = 'force-static';
 import { getNews } from '@/lib/news';
 
-const BASE_URL = 'https://globalgeopoliticsdaily.com';
+const BASE_URL = 'https://geo.itzdev.co.uk';
 
 export default async function sitemap() {
     const news = await getNews();

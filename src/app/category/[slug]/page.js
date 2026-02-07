@@ -38,7 +38,7 @@ export default async function CategoryPage({ params }) {
                 <div className="col-md-6 text-md-right mt-2 mt-md-0">
                     <nav aria-label="breadcrumb" className="d-inline-block">
                         <ol className="breadcrumb bg-transparent mb-0 p-0">
-                            <li className="breadcrumb-item"><Link href="/" className="text-secondary">Home</Link></li>
+                            <li className="breadcrumb-item"><Link href="/" prefetch={false} className="text-secondary">Home</Link></li>
                             <li className="breadcrumb-item active text-capitalize text-dark font-weight-bold" aria-current="page">{slug}</li>
                         </ol>
                     </nav>
@@ -50,7 +50,7 @@ export default async function CategoryPage({ params }) {
                     <div className="mb-3 text-muted" style={{ fontSize: '3rem' }}><i className="far fa-newspaper"></i></div>
                     <h4>No reports available in this sector yet.</h4>
                     <p className="text-muted">Our analysts are monitoring the situation. Please check back later.</p>
-                    <Link href="/" className="btn btn-outline-danger mt-3">Return to Global Dashboard</Link>
+                    <Link href="/" prefetch={false} className="btn btn-outline-danger mt-3">Return to Global Dashboard</Link>
                 </div>
             ) : (
                 <div className="row">
@@ -63,7 +63,7 @@ export default async function CategoryPage({ params }) {
                                 </div>
                                 <div className="card-body">
                                     <h5 className="card-title font-weight-bold mb-2">
-                                        <Link href={`/news/${item.slug}`} className="text-dark hover-danger text-decoration-none">
+                                        <Link href={`/news/${item.slug}`} prefetch={false} className="text-dark hover-danger text-decoration-none">
                                             {item.title}
                                         </Link>
                                     </h5>
@@ -73,7 +73,7 @@ export default async function CategoryPage({ params }) {
                                     <small className="text-muted">
                                         <i className="far fa-clock mr-1 text-danger"></i> {new Date(item.published_at).toLocaleDateString('ne-NP')}
                                     </small>
-                                    <Link href={`/news/${item.slug}`} className="btn btn-sm btn-outline-danger font-weight-bold">Read Analysis</Link>
+                                    <Link href={`/news/${item.slug}`} prefetch={false} className="btn btn-sm btn-outline-danger font-weight-bold">Read Analysis</Link>
                                 </div>
                             </div>
                         </div>

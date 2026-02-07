@@ -47,7 +47,7 @@ export default async function NewsDetailPage({ params }) {
             <div className="container py-5 text-center alert alert-danger mt-5">
                 <h3>रिपोर्ट फेला परेन (News Not Found)</h3>
                 <p>तपाईंले खोज्नुभएको समाचार उपलब्ध छैन।</p>
-                <Link href="/" className="btn btn-outline-secondary">मुख्य पृष्ठमा जानुहोस्</Link>
+                <Link href="/" prefetch={false} className="btn btn-outline-secondary">मुख्य पृष्ठमा जानुहोस्</Link>
             </div>
         );
     }
@@ -83,8 +83,8 @@ export default async function NewsDetailPage({ params }) {
                 <div className="col-12 mb-3">
                     <nav aria-label="breadcrumb">
                         <ol className="breadcrumb bg-transparent p-0">
-                            <li className="breadcrumb-item"><Link href="/">Home</Link></li>
-                            <li className="breadcrumb-item text-capitalize"><Link href={`/category/${news.category}`}>{news.category}</Link></li>
+                            <li className="breadcrumb-item"><Link href="/" prefetch={false}>Home</Link></li>
+                            <li className="breadcrumb-item text-capitalize"><Link href={`/category/${news.category}`} prefetch={false}>{news.category}</Link></li>
                             <li className="breadcrumb-item active" aria-current="page">{news.title.slice(0, 30)}...</li>
                         </ol>
                     </nav>
@@ -125,7 +125,7 @@ export default async function NewsDetailPage({ params }) {
                                         <img src={item.image || "https://placehold.co/100x80"} className="mr-3 rounded" alt={item.title} style={{ width: '100px', height: '80px', objectFit: 'cover' }} />
                                         <div className="media-body">
                                             <h6 className="mt-0 mb-1 font-weight-bold">
-                                                <Link href={`/news/${item.slug}`} className="text-dark hover-danger">
+                                                <Link href={`/news/${item.slug}`} prefetch={false} className="text-dark hover-danger">
                                                     {item.title}
                                                 </Link>
                                             </h6>
