@@ -34,7 +34,7 @@ export const metadata = {
     description: 'In-depth analysis of global affairs, security, and strategic developments.',
     images: [
       {
-        url: '/seoexample/logo.png', // Uses the local logo we configured
+        url: '/logo.png', // Uses the local logo we configured
         width: 800,
         height: 600,
         alt: 'Global Geopolitics Daily Logo',
@@ -45,16 +45,16 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Global Geopolitics Daily',
     description: 'Real-time geopolitical intelligence and OSINT analysis.',
-    images: ['/seoexample/logo.png'],
+    images: ['/logo.png'],
     creator: '@GeopoliticsDaily',
   },
   alternates: {
     canonical: '/',
   },
   icons: {
-    icon: '/seoexample/logo.png',
-    shortcut: '/seoexample/logo.png',
-    apple: '/seoexample/logo.png',
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
   },
 };
 

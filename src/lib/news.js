@@ -21,7 +21,7 @@ export async function getNews() {
         if (item.image && item.image.startsWith('/') && !item.image.startsWith('/seoexample')) {
             return {
                 ...item,
-                image: `/seoexample${item.image}`
+                image: `${item.image}`
             };
         }
         return item;
