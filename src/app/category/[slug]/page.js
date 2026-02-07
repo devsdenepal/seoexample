@@ -1,6 +1,17 @@
 import Link from 'next/link';
 import { getNews } from '@/lib/news';
 
+export async function generateStaticParams() {
+    return [
+        { slug: 'geopolitics' },
+        { slug: 'defense' },
+        { slug: 'intelligence' },
+        { slug: 'cyber' },
+        { slug: 'conflict' },
+        { slug: 'international' },
+    ];
+}
+
 export async function generateMetadata({ params }) {
     const { slug } = await params;
     const title = slug.charAt(0).toUpperCase() + slug.slice(1);

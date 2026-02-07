@@ -1,6 +1,13 @@
 import Link from 'next/link';
-import { getNewsBySlug, getNewsByCategory } from '@/lib/news';
+import { getNewsBySlug, getNewsByCategory, getNews } from '@/lib/news';
 import ShareButtons from '@/components/ShareButtons';
+
+export async function generateStaticParams() {
+    const news = await getNews();
+    return news.map((item) => ({
+        slug: item.slug,
+    }));
+}
 
 export async function generateMetadata({ params }) {
     const { slug } = await params;
