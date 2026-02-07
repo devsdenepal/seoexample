@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 
 // Perfect SEO Metadata Configuration
 export const metadata = {
-  metadataBase: new URL('https://geo.itzdev.co.uk/seoexample'), // Matches the deployment subpath
+  metadataBase: new URL('https://geo.itzdev.co.uk'), // Matches the primary domain
   title: {
     default: 'Global Geopolitics Daily',
     template: '%s | Global Geopolitics Daily',

@@ -29,7 +29,7 @@ export default function Header() {
                     <div className="row align-items-center">
                         <div className="col-md-3">
                             <div className="logo_area">
-                                <Link href="/">
+                                <Link href="/" prefetch={false}>
                                     <img src="/logo.png" alt="logo" />
                                 </Link>
                             </div>
@@ -58,13 +58,13 @@ export default function Header() {
                         <div className="col-md-12">
                             <div className="manu_area">
                                 <ul>
-                                    <li className="active"><Link href="/"><i className="fas fa-globe"></i> ग्लोबल</Link></li>
-                                    <li><Link href="/category/geopolitics">भू-राजनीति</Link></li>
-                                    <li><Link href="/category/defense">रक्षा रणनीति</Link></li>
-                                    <li><Link href="/category/intelligence">गुप्तचर/OSINT</Link></li>
-                                    <li><Link href="/category/cyber">साइबर सुरक्षा</Link></li>
-                                    <li><Link href="/category/conflict">द्वन्द्व</Link></li>
-                                    <li><Link href="/category/international">अन्तर्राष्ट्रिय</Link></li>
+                                    <li className="active"><Link href="/" prefetch={false}><i className="fas fa-globe"></i> ग्लोबल</Link></li>
+                                    <li><Link href="/category/geopolitics" prefetch={false}>भू-राजनीति</Link></li>
+                                    <li><Link href="/category/defense" prefetch={false}>रक्षा रणनीति</Link></li>
+                                    <li><Link href="/category/intelligence" prefetch={false}>गुप्तचर/OSINT</Link></li>
+                                    <li><Link href="/category/cyber" prefetch={false}>साइबर सुरक्षा</Link></li>
+                                    <li><Link href="/category/conflict" prefetch={false}>द्वन्द्व</Link></li>
+                                    <li><Link href="/category/international" prefetch={false}>अन्तर्राष्ट्रिय</Link></li>
                                 </ul>
                             </div>
                         </div>
@@ -84,7 +84,7 @@ export default function Header() {
                                             newsTicker.map((item, index) => (
                                                 <span key={index} className="mr-5">
                                                     <i className="fas fa-dot-circle text-danger mr-2"></i>
-                                                    <Link href={`/news/${item.slug}`} className="text-white hover-info">{item.title}</Link>
+                                                    <Link href={`/news/${item.slug}`} prefetch={false} className="text-white hover-info">{item.title}</Link>
                                                 </span>
                                             ))
                                         ) : (

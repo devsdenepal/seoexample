@@ -17,13 +17,6 @@ export async function getNews() {
                 image: `https://placehold.co/600x400?text=${encodeURIComponent(item.category)}`
             };
         }
-        // Prepend basePath for relative paths
-        if (item.image && item.image.startsWith('/') && !item.image.startsWith('/seoexample')) {
-            return {
-                ...item,
-                image: `${item.image}`
-            };
-        }
         return item;
     });
 }
