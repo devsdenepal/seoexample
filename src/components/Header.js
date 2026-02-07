@@ -2,24 +2,13 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-export default function Header() {
-    const [newsTicker, setNewsTicker] = useState([]);
+export default function Header({ initialNews = [] }) {
+    const [newsTicker, setNewsTicker] = useState(initialNews);
     const [currentDate, setCurrentDate] = useState('');
 
     useEffect(() => {
         // Set date on client side to avoid hydration mismatch
         setCurrentDate(new Date().toLocaleDateString('ne-NP', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }));
-
-        async function fetchTickerNews() {
-            try {
-                const res = await fetch('/api/news');
-                const data = await res.json();
-                setNewsTicker(data);
-            } catch (error) {
-                console.error('Failed to fetch ticker news:', error);
-            }
-        }
-        fetchTickerNews();
     }, []);
 
     return (

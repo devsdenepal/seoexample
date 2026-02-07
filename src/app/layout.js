@@ -1,6 +1,7 @@
 import './globals.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { getNews } from '../lib/news';
 
 // Perfect SEO Metadata Configuration
 export const metadata = {
@@ -64,7 +65,10 @@ export const viewport = {
   maximumScale: 5,
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const news = await getNews();
+  const tickerNews = news.slice(0, 10); // Pass recent news to ticker
+
   return (
     <html lang="ne">
       <head>
@@ -76,7 +80,7 @@ export default function RootLayout({ children }) {
         <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
       </head>
       <body>
-        <Header />
+        <Header initialNews={tickerNews} />
         {children}
         <Footer />
 
