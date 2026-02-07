@@ -13,12 +13,8 @@ export async function generateMetadata({ params }) {
 export default async function CategoryPage({ params }) {
     const { slug } = await params;
 
-    // Map 'international' to 'geopolitics' as per previous logic
-    let targetCategory = slug;
-    if (slug === 'international') targetCategory = 'geopolitics';
-
     const allNews = await getNews();
-    const news = allNews.filter(item => item.category === targetCategory);
+    const news = allNews.filter(item => item.category === slug);
 
     return (
         <div className="container py-5">
@@ -56,7 +52,7 @@ export default async function CategoryPage({ params }) {
                                 </div>
                                 <div className="card-body">
                                     <h5 className="card-title font-weight-bold mb-2">
-                                        <Link href={`/news/${item.id}`} className="text-dark hover-danger text-decoration-none">
+                                        <Link href={`/news/${item.slug}`} className="text-dark hover-danger text-decoration-none">
                                             {item.title}
                                         </Link>
                                     </h5>
@@ -66,7 +62,7 @@ export default async function CategoryPage({ params }) {
                                     <small className="text-muted">
                                         <i className="far fa-clock mr-1 text-danger"></i> {new Date(item.published_at).toLocaleDateString('ne-NP')}
                                     </small>
-                                    <Link href={`/news/${item.id}`} className="btn btn-sm btn-outline-danger font-weight-bold">Read Analysis</Link>
+                                    <Link href={`/news/${item.slug}`} className="btn btn-sm btn-outline-danger font-weight-bold">Read Analysis</Link>
                                 </div>
                             </div>
                         </div>

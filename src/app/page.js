@@ -80,10 +80,10 @@ export default async function Home() {
 
               <div className="sidebar_widget">
                 <div className="section_title">
-                  <h2>विज्ञापन</h2>
+                  <h2>सूचना (Notice)</h2>
                 </div>
-                <div className="bg-light p-5 text-center text-muted border">
-                  Geopolitics Ad Space
+                <div className="bg-white p-4 text-center border rounded shadow-sm">
+                  <p className="text-muted small mb-0">हाम्रो विश्लेषण भ्रामक सूचना विरुद्ध OSINT पद्धतिमा आधारित छ।</p>
                 </div>
               </div>
             </div>

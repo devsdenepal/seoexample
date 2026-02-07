@@ -84,7 +84,7 @@ export default function Header() {
                                             newsTicker.map((item, index) => (
                                                 <span key={index} className="mr-5">
                                                     <i className="fas fa-dot-circle text-danger mr-2"></i>
-                                                    {item.title}
+                                                    <Link href={`/news/${item.slug}`} className="text-white hover-info">{item.title}</Link>
                                                 </span>
                                             ))
                                         ) : (
