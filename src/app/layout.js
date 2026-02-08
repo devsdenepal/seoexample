@@ -3,18 +3,23 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { getNews } from '../lib/news';
 
-// Perfect SEO Metadata Configuration
+// Comprehensive SEO Metadata Configuration for Daily Geopolitics
 export const metadata = {
-  metadataBase: new URL('https://geo.itzdev.co.uk'), // Matches the primary domain
+  metadataBase: new URL('https://geo.itzdev.co.uk'),
   title: {
-    default: 'Global Geopolitics Daily',
-    template: '%s | Global Geopolitics Daily',
+    default: 'Daily Geopolitics - Nepal News & Global Analysis',
+    template: '%s | Daily Geopolitics',
   },
-  description: 'Leading source for global geopolitics, OSINT analysis, defense strategy, conflict monitoring, and cyber warfare intelligence.',
-  keywords: ['Geopolitics', 'OSINT', 'Cyber Warfare', 'Defense Strategy', 'Global Conflict', 'Intelligence Analysis', 'Nepal News'],
-  authors: [{ name: 'Global Geopolitics Team' }],
-  creator: 'Global Geopolitics Daily',
-  publisher: 'Global Geopolitics Daily',
+  description: 'Daily Geopolitics provides the latest news about Nepal today, including geopolitical situations, political scenarios of Nepal, and global defense strategy updates.',
+  keywords: [
+    'Daily Geopolitics', 'Nepal News Today', 'Political Scenario of Nepal',
+    'Geopolitical Website', 'Recent Nepal News Today', 'Current Geopolitical Issues',
+    'Geopolitics Definition', 'Nepal Democracy Status', 'Nepali News', 'International Conflicts',
+    'OSINT Nepal', 'Defense Strategy News', 'Geopolitics Meaning'
+  ],
+  authors: [{ name: 'Daily Geopolitics Team' }],
+  creator: 'Daily Geopolitics',
+  publisher: 'Daily Geopolitics',
   robots: {
     index: true,
     follow: true,
@@ -29,25 +34,25 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'ne_NP',
-    url: 'https://globalgeopoliticsdaily.com',
-    siteName: 'Global Geopolitics Daily',
-    title: 'Global Geopolitics Daily - OSINT & Conflict Monitor',
-    description: 'In-depth analysis of global affairs, security, and strategic developments.',
+    url: 'https://dailygeopolitics.com',
+    siteName: 'Daily Geopolitics',
+    title: 'Daily Geopolitics - Latest Nepal News & OSINT Analysis',
+    description: 'Expert analysis on the geopolitical situation of Nepal and current world affairs.',
     images: [
       {
-        url: '/logo.png', // Uses the local logo we configured
+        url: '/logo.png',
         width: 800,
         height: 600,
-        alt: 'Global Geopolitics Daily Logo',
+        alt: 'Daily Geopolitics Logo',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Global Geopolitics Daily',
-    description: 'Real-time geopolitical intelligence and OSINT analysis.',
+    title: 'Daily Geopolitics',
+    description: 'Real-time Nepal news today and geopolitical intelligence.',
     images: ['/logo.png'],
-    creator: '@GeopoliticsDaily',
+    creator: '@DailyGeopolitics',
   },
   icons: {
     icon: '/logo.png',

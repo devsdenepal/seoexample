@@ -2,11 +2,11 @@ import Link from 'next/link';
 import { getNews } from '../lib/news';
 
 export const metadata = {
-  title: 'Global Geopolitics Daily - Latest OSINT, Conflict, and Cyber Warfare News',
-  description: 'Your premier source for global geopolitics, conflict monitoring, OSINT analysis, defense strategy, and cyber warfare updates.',
+  title: 'Daily Geopolitics - Latest Nepal News, OSINT & Strategic Analysis',
+  description: 'Daily Geopolitics is your source for today news for Nepal, geopolitical situation analysis, and world strategic updates.',
   openGraph: {
-    title: 'Global Geopolitics Daily',
-    description: 'Latest OSINT, Conflict, and Cyber Warfare News for professionals and enthusiasts.',
+    title: 'Daily Geopolitics - Nepal & Global Intel',
+    description: 'Latest geopolitical news from Nepal and beyond.',
     images: ['/logo.png'],
   },
 };

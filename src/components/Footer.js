@@ -13,10 +13,8 @@ export default function Footer() {
                     </div>
                     <div className="col-md-4">
                         <div className="footer_widget">
-                            <h4>सम्पर्क</h4>
-                            <p>काठमाडौं, नेपाल</p>
-                            <p>फोन: +९७७-१-४XXXXXX</p>
-                            <p>इमेल: info@nepalnews.com</p>
+                            <h4>हाम्रो मिशन</h4>
+                            <p className="text-secondary">भू-राजनीतिक घटनाक्रम, सैन्य रणनीति र साइबर सुरक्षाका क्षेत्रमा गहिरो विश्लेषण।</p>
                         </div>
                     </div>
                     <div className="col-md-4">
@@ -33,7 +31,7 @@ export default function Footer() {
                 </div>
                 <div className="row mt-4">
                     <div className="col-md-12 text-center text-secondary">
-                        <p>&copy; {new Date().getFullYear()} Nepal News Daily. सर्वाधिकार सुरक्षित।</p>
+                        <p>&copy; {new Date().getFullYear()} Daily Geopolitics. सर्वाधिकार सुरक्षित।</p>
                     </div>
                 </div>
             </div>
