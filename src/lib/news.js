@@ -7,18 +7,10 @@ export async function getNews() {
     const fileContents = fs.readFileSync(filePath, 'utf8');
     const news = JSON.parse(fileContents);
 
-    // Sanitize image paths
-    return news.map(item => {
-        // Handle local absolute paths
-        const isLocalPath = item.image && (item.image.match(/^[a-zA-Z]:[\\\/]/) || item.image.startsWith('\\\\'));
-        if (isLocalPath) {
-            return {
-                ...item,
-                image: `https://placehold.co/600x400?text=${encodeURIComponent(item.category)}`
-            };
-        }
-        return item;
-    });
+    // Sort news by date descending
+    news.sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
+
+    return news;
 }
 
 // Helper to get single news by ID
