@@ -34,7 +34,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'ne_NP',
-    url: 'https://dailygeopolitics.com',
+    url: 'https://geo.itzdev.co.uk',
     siteName: 'Daily Geopolitics',
     title: 'Daily Geopolitics - Latest Nepal News & OSINT Analysis',
     description: 'Expert analysis on the geopolitical situation of Nepal and current world affairs.',
