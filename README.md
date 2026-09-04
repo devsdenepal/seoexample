@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# seoexample — Daily Geopolitics
 
-## Getting Started
+A production-style **Nepali news & geopolitical analysis site** built with Next.js (App Router). It demonstrates modern SEO patterns: server-side rendering, dynamic slugs, a `sitemap.xml`, `robots.txt`, Open Graph meta tags, and category-based routing.
 
-First, run the development server:
+## Features
+
+- **News home** — featured hero, top stories, trending sidebar, and category sections (conflict, OSINT/intel, cyber, defense, geopolitics, international).
+- **Dynamic article pages** — `/news/[slug]` with SSR per-route metadata.
+- **Category pages** — `/category/[slug]` filter news by topic.
+- **SEO out of the box** — `sitemap.xml`, `robots.txt`, Open Graph tags, and per-page metadata.
+- **Local data source** — all articles live in `src/data/news.json` (no external DB needed).
+- **Nepali locale** — dates and UI text rendered in `ne-NP`, with a breaking-news ticker.
+
+## Tech stack
+
+| Layer     | Tech                              |
+| --------- | --------------------------------- |
+| Framework | Next.js 16 (App Router)           |
+| UI        | React 19, Bootstrap-style classes |
+| Data      | Static `news.json` server reads   |
+
+## Getting started
 
 ```bash
+npm install
+
+# development
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# open http://localhost:3000
+
+# production
+npm run build
+npm run start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project structure
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```
+src/
+├── app/
+│   ├── page.js                    # Home (hero + sections)
+│   ├── layout.js                  # Root layout + metadata
+│   ├── robots.js                  # robots.txt route
+│   ├── sitemap.js                 # sitemap.xml route
+│   ├── category/[slug]/page.js    # Category list pages
+│   └── news/[slug]/page.js        # Article pages
+├── components/
+│   ├── Header.js                  # Nav + breaking-news ticker
+│   ├── Footer.js
+│   └── ShareButtons.js
+├── data/news.json                 # Article content (source of truth)
+└── lib/news.js                    # Data read + lookup helpers
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Adding articles
 
-## Learn More
+Append entries to `src/data/news.json`:
 
-To learn more about Next.js, take a look at the following resources:
+```json
+{
+  "id": 103,
+  "slug": "your-article-slug",
+  "title": "Article Title",
+  "category": "geopolitics",
+  "summary": "Short intro…",
+  "content": "<p>Full article…</p>",
+  "image": "https://…/image.jpg",
+  "published_at": "2026-01-01T12:00:00Z"
+}
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Run `npm run build` — the new article is statically generated at `/news/<slug>` automatically.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## SEO specifics
 
-## Deploy on Vercel
+- `src/app/robots.js` and `src/app/sitemap.js` generate `robots.txt` and `sitemap.xml` at build time.
+- Each `[slug]/page.js` exports `generateMetadata` for per-article title/description/OG tags. *(Check the news/category pages for the current metadata helpers.)*
+- Images use plain `<img>` tags; for stricter optimization, swap to `next/image`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Notes
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `intel`/`osint` articles combine under the **गुप्तचर विश्लेषण** (OSINT/Intel) home section; categories are defined by the string value in each article.
+- The site is a demo/example of SEO architecture — review content and imagery before public deployment.
+
+## License
+
+MIT
